@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grommet } from 'grommet';
+import { Box, Grommet } from 'grommet';
 
 const theme = {
   global: {
@@ -11,25 +11,28 @@ const theme = {
   },
 };
 
+const AppBar = (props) => (
+  <Box
+    tag='header'
+    direction='row'
+    align='center'
+    justify='between'
+    background='brand'
+    pad={{ left: 'medium', right: 'small', vertical: 'small' }}
+    elevation='medium'
+    style={{ zIndex: '1' }}
+    {...props}
+  />
+);
+
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Grommet theme={theme}>
-          <header className="App-header">
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-            <h1>hola mundo</h1>
-          </header>
+          <AppBar>
+            Agapox | Front End Developer
+          </AppBar>
         </Grommet>
       </div>
     );
